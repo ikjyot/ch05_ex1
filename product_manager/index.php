@@ -54,10 +54,11 @@ if ($action == 'list_products') {
 } else if ($action == 'list_categories') {
     $categories = get_categories();
     include('category_list.php');
- } else if($action=='add_category') {
-     $name = gilter_input(INPUT_POST, 'name');
+
+} else if($action=='add_category') {
+     $name = filter_input(INPUT_POST, 'name');
      if ($name == NULL) {
-       $error = 'Category name does not exist. Try
+       $error = 'Category name Invalid. Try
        again';
        include('view/error.php');
      } else {
