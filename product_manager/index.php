@@ -63,13 +63,12 @@ if ($action == 'list_products') {
        include('view/error.php');
      } else {
          add_category($name);
-	 header('Location:
-	 .?action=list_categories');
+	 header("Location: .?action=list_categories");
      }
  } else if ($action == 'delete_category') {
      $category_id = filter_input(INPUT_POST,
      'category_id', FILTER_VALIDATE_INT);
      delete_category($category_id);
-     header('Location: .?action=list_categories');
+     header("Location: .?action=list_categories");
  }    
 ?>
