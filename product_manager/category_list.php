@@ -12,7 +12,7 @@
 	  <td><?php echo $category['categoryName']; ?></td>
 	  <td>
 	    <form action="index.php" method="POST">
-	      <input type="hidden" name="catedory_id"
+	      <input type="hidden" name="category_id"
 	      value="<?php echo $category['categoryID'];
 	      ?>" />
 	      <input type="hidden" name="action"
