@@ -1,8 +1,7 @@
 <?php
 function get_categories() {
     global $db;
-    $query = 'SELECT * FROM categories
-              ORDER BY categoryID';
+    $query = 'SELECT * FROM categories_guitar1 ORDER BY categoryID';
     $statement = $db->prepare($query);
     $statement->execute();
     return $statement;    
@@ -10,8 +9,7 @@ function get_categories() {
 
 function get_category_name($category_id) {
     global $db;
-    $query = 'SELECT * FROM categories
-              WHERE categoryID = :category_id';    
+    $query = 'SELECT * FROM categories_guitar1 WHERE categoryID = :category_id';    
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->execute();    
