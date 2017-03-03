@@ -26,6 +26,14 @@
     </table>
 
     <h2>Add Category</h2>
+    <form id="add_category_form" action="index.php"
+    method="POST">
+      <input type="hidden" name="action"
+      value="add_category" />
+      <label>Name:</label>
+      <input type="text" name="name" />
+      <input type="submit" value="Add" />
+    </form>
     <!-- add code for form here -->
 
     <p><a href="index.php?action=list_products">List Products</a></p>
