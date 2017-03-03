@@ -21,10 +21,10 @@ function get_category_name($category_id) {
 
 function add_category($name) {
   global $db;
-  $query = "INSERT INTO categories_guitar1 WHERE
-  categoryID = :category_id";
+  $query = "INSERT INTO categories_guitar1
+  (categoryName) VALUES (:name)";
   $statement = $db->prepare($query);
-  $statement->bindValue(':category_id', $category_id);
+  $statement->bindValue(':name', $name);
   $statement->execute();
   $statement->closeCursor();
 }
