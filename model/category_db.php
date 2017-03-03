@@ -21,7 +21,7 @@ function get_category_name($category_id) {
 
 function add_category($name) {
   global $db;
-  $query = "INSER INTO categories_guitar1 WHERE
+  $query = "INSERT INTO categories_guitar1 WHERE
   categoryID = :category_id";
   $statement = $db->prepare($query);
   $statement->bindValue(':category_id', $category_id);
