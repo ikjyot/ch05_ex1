@@ -51,8 +51,24 @@ if ($action == 'list_products') {
         add_product($category_id, $code, $name, $price);
         header("Location: .?category_id=$category_id");
     }
-} elseif ($action == 'list_categories') {
+} else if ($action == 'list_categories') {
     $categories = get_categories();
     include('category_list.php');
+ } else if($action=='add_category') {
+     $name = gilter_input(INPUT_POST, 'name');
+     if ($name == NULL) {
+       $error = 'Category name does not exist. Try
+       again';
+       include('view/error.php');
+     } else {
+         add_category($name);
+	 header('Location:
+	 .?action=list_categories');
+     }
+ } else if ($action == 'delete_category') {
+     $category_id = filter_input(INPUT_POST,
+     'category_id', FILTER_VALIDATE_INT);
+     delete_category($category_id);
+     header('Location: .?action=list_categories');
  }    
 ?>
